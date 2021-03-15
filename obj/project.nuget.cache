@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "8XHGu5fwyNpGOPoVNvHhIWUVIoqYfCm9FUPvzRPxSZs4djVvDc1wXnCAD9XPfBNHK9ZzXy73u+2SrM5iHYIacA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\danchang11\\source\\repos\\flaskwithcsharp\\Csharp2Python\\Csharp2Python.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\danchang11\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\danchang11\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\danchang11\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,16 @@
+C:\Users\danchang11\source\repos\flaskwithcsharp\Csharp2Python\obj\Debug\net5.0\Csharp2Python.csprojAssemblyReference.cache
+C:\Users\danchang11\source\repos\flaskwithcsharp\Csharp2Python\obj\Debug\net5.0\Csharp2Python.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danchang11\source\repos\flaskwithcsharp\Csharp2Python\obj\Debug\net5.0\Csharp2Python.AssemblyInfoInputs.cache
+C:\Users\danchang11\source\repos\flaskwithcsharp\Csharp2Python\obj\Debug\net5.0\Csharp2Python.AssemblyInfo.cs
+C:\Users\danchang11\source\repos\flaskwithcsharp\Csharp2Python\obj\Debug\net5.0\Csharp2Python.csproj.CoreCompileInputs.cache
+C:\Users\danchang11\source\repos\flaskwithcsharp\Csharp2Python\bin\Debug\net5.0\Csharp2Python.exe
+C:\Users\danchang11\source\repos\flaskwithcsharp\Csharp2Python\bin\Debug\net5.0\Csharp2Python.deps.json
+C:\Users\danchang11\source\repos\flaskwithcsharp\Csharp2Python\bin\Debug\net5.0\Csharp2Python.runtimeconfig.json
+C:\Users\danchang11\source\repos\flaskwithcsharp\Csharp2Python\bin\Debug\net5.0\Csharp2Python.runtimeconfig.dev.json
+C:\Users\danchang11\source\repos\flaskwithcsharp\Csharp2Python\bin\Debug\net5.0\Csharp2Python.dll
+C:\Users\danchang11\source\repos\flaskwithcsharp\Csharp2Python\bin\Debug\net5.0\ref\Csharp2Python.dll
+C:\Users\danchang11\source\repos\flaskwithcsharp\Csharp2Python\bin\Debug\net5.0\Csharp2Python.pdb
+C:\Users\danchang11\source\repos\flaskwithcsharp\Csharp2Python\obj\Debug\net5.0\Csharp2Python.dll
+C:\Users\danchang11\source\repos\flaskwithcsharp\Csharp2Python\obj\Debug\net5.0\ref\Csharp2Python.dll
+C:\Users\danchang11\source\repos\flaskwithcsharp\Csharp2Python\obj\Debug\net5.0\Csharp2Python.pdb
+C:\Users\danchang11\source\repos\flaskwithcsharp\Csharp2Python\obj\Debug\net5.0\Csharp2Python.genruntimeconfig.cache

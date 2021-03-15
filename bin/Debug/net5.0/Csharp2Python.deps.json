@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Csharp2Python/1.0.0": {
+        "runtime": {
+          "Csharp2Python.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Csharp2Python/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
