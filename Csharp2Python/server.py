@@ -2,7 +2,7 @@ import socket
 import re
 import threading
 from ckip_transformers.nlp import CkipWordSegmenter, CkipPosTagger
-from Parser_Tree_Utils.parser_util import get_parser_tree_cls , NodeType
+from utils_parser.parser_util import get_parser_tree_cls , NodeType
 import ckip_classic.client
 from utils import prepro, parse_tree
 
