@@ -1,8 +1,17 @@
 import socket
-import time
+import re
 import threading
-from node import *
-from CoreNLP import *
+from ckip_transformers.nlp import CkipWordSegmenter, CkipPosTagger
+from Parser_Tree_Utils.parser_util import get_parser_tree_cls , NodeType
+import ckip_classic.client
+from utils import prepro, parse_tree
+
+
+# Initialize drivers with custom checkpoints
+ws_driver  = CkipWordSegmenter(level=3, device=0)
+pos_driver = CkipPosTagger(level=3, device=0)
+ps = ckip_classic.client.CkipParserClient(username='danchang11', password='to26292661')
+pt = get_parser_tree_cls(NodeType.Origin_Ckip)
 
 HEADER = 1024
 PORT = 9527
@@ -19,9 +28,11 @@ def handle_client(conn,addr):
 
     connected = True
     while connected:
+        text = []
         msg_length = conn.recv(HEADER).decode(FORMAT)
         if msg_length:
             msg_length = int(msg_length)
+            print(f"msgl = {msg_length}")
             msg = conn.recv(msg_length).decode(FORMAT)
 
             if msg == DISCONNECT_MSG:
@@ -29,15 +40,35 @@ def handle_client(conn,addr):
                 break
             print(f"[{addr}] : {msg}")
 
-            ParsTree = CoreN.get_parse_tree(msg)
-            NodeTree = make_tree(ParsTree)
-            Leaves = list_of_leaves(NodeTree)
-            keywords = inorder(Leaves)
+            text.append(str(msg))
+            ws = ws_driver(text)
+            pos = pos_driver(ws)
+            parse_input = prepro(ws,pos)
+            ParsTree = parse_tree(ps.apply_list(parse_input)[0])
+            root = pt.make_tree(ParsTree)
+
+            t = pt.list_of_leaves(root)
+            k = pt.getkeywords(t)
+            keywords = ""
+            for word in k:
+                keywords += " " + word
+
+
+            # ParsTree = CoreN.get_parse_tree(t2s(msg))
+            # NodeTree = make_tree(ParsTree)
+            # Leaves = list_of_leaves(NodeTree)
+            # keywords = inorder(Leaves)
+            # keywords = s2t(keywords)
+
+            if(keywords == ""):
+                keywords = "None"
+                print(keywords)
 
         conn.send(keywords.encode(FORMAT))
-
     conn.close()
 
+def punc_del(s):
+    return re.sub(r'[^\w\s]', '', s)
 def start():
     server.listen()
     print(f"[SERVER IS LISTENINGP {SERVER}:{PORT}]")
@@ -53,6 +84,6 @@ if __name__ =='__main__':
     sentence = t2s('初始化')
     t = CoreN.get_parse_tree(sent=sentence)
 
-    print("[SERVER STRATED]")
+    print("[SERVER STARTED]")
     start()
 

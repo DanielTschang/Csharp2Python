@@ -1,3 +1,9 @@
+from CoreNLP import *
+
+fs = open(r".\cn_stopwords.txt",encoding="utf-8")
+stopwords = fs.read()
+stopwords = stopwords.split("\n")
+
 class Node:
     def __init__(self,start):
         self.start = start
@@ -54,7 +60,7 @@ def list_of_leaves(node):
 
 
 def inorder(leaf:list):
-    phaselist = ['NP']
+    phaselist = ['NP','VP']
     tmp = None
     keywords = ''
     for node in leaf:
@@ -66,8 +72,14 @@ def inorder(leaf:list):
             phase = ''
             for i in parent.children:
                 phase = phase + i.text
-            keywords = keywords +' '+phase
+            if len(phase)>1 and phase not in stopwords:
+                keywords = keywords +' '+phase
     return keywords
+
+def monpacut(s:str):
+    import monpa
+
+
 
 
 
@@ -99,10 +111,18 @@ if __name__ == "__main__":
                 (NP (NN 家庭) (NN 暴力))))))))
     '''
 
-    root = make_tree(t)
+    CoreN = StanzaClient()
 
-    t = list_of_leaves(root)
-    k = inorder(t)
+    ParsTree = CoreN.get_parse_tree(t2s('為何要在行政訴訟法增訂都市計畫審查程序專章'))
+    NodeTree = make_tree(ParsTree)
+    Leaves = list_of_leaves(NodeTree)
+    keywords = inorder(Leaves)
+    keywords = s2t(keywords)
+    print(keywords)
+    # root = make_tree(t)
+    #
+    # t = list_of_leaves(root)
+    # k = inorder(t)
 
 
 
